@@ -36,7 +36,7 @@ h1, h2, h3 {
 
 .item {
   margin-left: 10px;
-  min-height: 50px;
+  min-height: 40px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #019267;
@@ -89,8 +89,7 @@ button {
 
 
 .list p {
-  color: #019267;
-  font-weight: bold;
+  font-weight: 300;
   font-size: 1.5rem;
   margin-left: 1rem;
 }
@@ -125,8 +124,6 @@ footer {
   bottom: 0;
   height: 2rem;
   justify-content: center;
-  color: #F7F5F2;
-  padding: 1rem;
 }
 footer p {
   font-weight: bold;

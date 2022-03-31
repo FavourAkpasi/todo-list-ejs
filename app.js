@@ -42,6 +42,16 @@ app.get("/", (req, res) => {
   });
 });
 
+app.post("/", (req, res) => {
+  const item = new Item({ name: req.body.newItem });
+  if (req.body.newItem !== "") {
+    List.findOne({ name: req.body.currentList }, (err, list) => {
+      list.items.push(item);
+      list.save(()=>{res.redirect("/" + req.body.currentList);});
+    });
+  } else {res.redirect("/" + req.body.currentList)}
+});
+
 
 app.get("/:listName", (req, res) => {
   let listName = _.capitalize(req.params.listName)
@@ -61,16 +71,6 @@ app.get("/:listName", (req, res) => {
       });
     }
   });
-});
-
-app.post("/", (req, res) => {
-  const item = new Item({ name: req.body.newItem });
-  if (req.body.newItem !== "") {
-    List.findOne({ name: req.body.currentList }, (err, list) => {
-      list.items.push(item);
-      list.save(()=>{res.redirect("/" + req.body.currentList);});
-    });
-  };
 });
 
 app.post("/deleteItem", (req, res) => {
@@ -100,7 +100,7 @@ app.post("/addList/new", (req, res) => {
         });
         list.save(()=>{ res.redirect("/addList/new");});
       } else {res.redirect("/addList/new")}
-    }else {res.redirect("/addList/new")}
+    }else {res.redirect("/")}
   });
 })
 
