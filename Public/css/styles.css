@@ -89,9 +89,10 @@ button {
 
 
 .list p {
-  color: white;
+  color: #019267;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  margin-left: 1rem;
 }
 
 input[type="text"] {
@@ -108,6 +109,7 @@ input[type="text"] {
 input[type="text"]:focus {
   outline: none;
   box-shadow: inset 0 -3px 0 0 rgb(12, 156, 12);
+  border-bottom: 0.1rem thin rgb(12, 156, 12);
 }
 
 ::placeholder {
@@ -124,6 +126,7 @@ footer {
   height: 2rem;
   justify-content: center;
   color: #F7F5F2;
+  padding: 1rem;
 }
 footer p {
   font-weight: bold;
@@ -131,5 +134,5 @@ footer p {
   padding: 0;
 }
 .contentWrap{
-  padding-bottom: 0;
+  padding-bottom: 2rem;
 }

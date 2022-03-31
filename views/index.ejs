@@ -29,7 +29,7 @@
     
           <form action="/deleteList" method="post">
             <% lists.forEach((list)=>{ %>
-              <div class="item">
+              <div class="item list">
                 <button class="delete" type="submit" name="checked" value= <%= list._id %> ><i class="fas fa-trash-alt"></i></button>
                 <a href="/<%= list.name %>"><p><%= list.name %></p></a>
               </div>
