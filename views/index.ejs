@@ -12,38 +12,37 @@
   </head>
   <body>
     <div class="container">
-      <div class="contentWrap">
-        <div class="box" id="heading">
-          <h2><%= thisDay %></h2>
-          <h1>MY LISTS</h1>
-        </div>
-    
-        <div class="box">
-          <form class="add" action="/addList/new" method="post" >
-            <input type="text" name="newListName" placeholder="New List Name" autofocus />
-            <button class="add" type="submit"><i class="fas fa-plus"></i></button>
-          </form>
-        </div>
-    
-        <div class="box scroll">
-    
-          <form action="/deleteList" method="post">
-            <% lists.forEach((list)=>{ %>
-              <div class="item list">
-                <button class="delete" type="submit" name="checked" value= <%= list._id %> ><i class="fas fa-trash-alt"></i></button>
-                <a href="/<%= list.name %>"><p><%= list.name %></p></a>
-              </div>
-            <% }) %>
-
-          </form>
-        </div>
-    
-    
-        
-        <footer>
-          <p>Made with ❤ by Akpasi Favour </p>
-        </footer>
+      <div class="box" id="heading">
+        <h2><%= thisDay %></h2>
+        <h1>MY LISTS</h1>
       </div>
+  
+      <div class="box">
+        <form class="add" action="/addList/new" method="post" >
+          <input type="text" name="newListName" placeholder="New List Name" autofocus />
+          <button class="add" type="submit"><i class="fas fa-plus"></i></button>
+        </form>
+      </div>
+  
+      <div class="box scroll">
+  
+        <form action="/deleteList" method="post">
+          <% lists.forEach((list)=>{ %>
+            <div class="item list">
+              <button class="delete" type="submit" name="checked" value= <%= list._id %> ><i class="fas fa-trash-alt"></i></button>
+              <a href="/<%= list.name %>"><p><%= list.name %></p></a>
+            </div>
+          <% }) %>
+
+        </form>
+      </div>
+  
+  
+      
+      <footer>
+        <p>Made with ❤ by Akpasi Favour </p>
+      </footer>
+      
     </div>
 
   </body>

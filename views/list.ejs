@@ -12,42 +12,41 @@
   </head>
   <body>
     <div class="container">
-      <div class="contentWrap">
-        <div class="box" id="heading">
-          <h2><%= thisDay %></h2>
-          <h1><%= listTitle %></h1>
-        </div>
-    
-        <div class="box">
-          <form action="/" method="post" class="add">
-            <input type="text" name="newItem" placeholder="New Item" autofocus />
-            <button class="add" type="submit" name="currentList" value="<%= listTitle %>"><i class="fas fa-plus"></i></button>
-          </form>
-        </div>
-        
-    
-        <div class="box scroll">
-    
-          <% items.forEach((item)=>{ %>
-          <form action="/deleteItem" method="post">
-              <div class="item">
-                <input type="checkbox" name="checked" value="<%= item._id %>" onchange="this.form.submit()"/>
-                <p><%= item.name %></p>
-              </div>
-            <input type="hidden" name="listName" value="<%= listTitle %>"></input>
-          </form>
-          <% }) %>
-    
-        </div>
-    
-        <div class="box" id="heading">
-          <a href="/addList/new"><h3>ADD / VIEW  LISTS</h3></a>
-        </div>
-    
-        <footer>
-          <p>Made with ❤ by Akpasi Favour </p>
-        </footer>
+      <div class="box" id="heading">
+        <h2><%= thisDay %></h2>
+        <h1><%= listTitle %></h1>
       </div>
+  
+      <div class="box">
+        <form action="/" method="post" class="add">
+          <input type="text" name="newItem" placeholder="New Item"  />
+          <button class="add" type="submit" name="currentList" value="<%= listTitle %>"><i class="fas fa-plus"></i></button>
+        </form>
+      </div>
+      
+  
+      <div class="box scroll">
+  
+        <% items.forEach((item)=>{ %>
+        <form action="/deleteItem" method="post">
+            <div class="item">
+              <input type="checkbox" name="checked" value="<%= item._id %>" onchange="this.form.submit()"/>
+              <p><%= item.name %></p>
+            </div>
+          <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+        </form>
+        <% }) %>
+  
+      </div>
+  
+      <div class="box" id="heading">
+        <a href="/addList/new"><h3>ADD / VIEW  LISTS</h3></a>
+      </div>
+  
+      <footer>
+        <p>Made with ❤ by Akpasi Favour </p>
+      </footer>
+    
     </div>
   </body>
 </html>

@@ -107,7 +107,7 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-  border-bottom: 3px solid green;
+  border-bottom: 1px solid green;
 }
 
 ::placeholder {
