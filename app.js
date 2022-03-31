@@ -10,7 +10,7 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("Public"));
-mongoose.connect(`mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.qmsvo.mongodb.net/todolistDB`);
+mongoose.connect("mongodb+srv://akpasi-admin:1122334455Aa.@cluster0.qmsvo.mongodb.net/todolistDB");
 
 const itemsSchema = new mongoose.Schema({
   name: String,
@@ -37,7 +37,9 @@ let day = today.toLocaleDateString("en-NG", options);
 
 
 app.get("/", (req, res) => {
- res.render("index")
+  List.find({}, (err, lists) => {
+    res.render("index", { thisDay: day, lists: lists });
+  });
 });
 
 
